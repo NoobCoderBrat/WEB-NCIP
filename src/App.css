@@ -1,0 +1,173 @@
+.bg-image {
+  background-image: url('/public/mayapay3..jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.logo-container {
+  text-align: center;
+}
+
+.logo {
+  width: 300px; 
+  height: auto; 
+}
+
+.login-form {
+  max-width: 400px;
+  width: 100%;
+}
+
+.font{
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: bolder;
+  letter-spacing: 1px;
+}
+
+.login-btn{
+  height: 57px;
+  background-color: #08439b !important;
+  border-color: #08439b !important;
+}
+
+.login-btn:hover{
+  opacity: 0.75;
+}
+
+.login-btn:active{
+  opacity: 0.50;
+}
+
+.register{
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.my-carousel {
+  max-width: 100%;
+  margin: auto; 
+}
+
+.my-carousel .carousel-item img {
+  width: auto;
+  height: 600px;
+}
+
+.shadow{
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, 
+  rgba(0, 0, 0, 0.12) 0px -12px 30px, 
+  rgba(0, 0, 0, 0.12) 0px 4px 6px, 
+  rgba(0, 0, 0, 0.17) 0px 12px 13px, 
+  rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.card-body {
+  text-align: justify;
+}
+
+.nav-link {
+  text-decoration: none;
+}
+
+.nav-link, .nav-dropdown {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link svg, .nav-dropdown svg {
+  vertical-align: middle; 
+}
+
+.nav-link {
+  padding: 0.5rem 1rem; 
+}
+
+.nav-dropdown .dropdown-toggle {
+  padding: 0.5rem 1rem; 
+}
+
+.text{
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  letter-spacing: 1px;
+}
+
+.table th, .table td {
+  text-align: center;
+}
+
+.table th {
+  background-color: #f8f9fa;
+}
+
+.table th.text-center {
+  text-align: center;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+.table td .icon {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.table td .icon:last-child {
+  margin-right: 0;
+}
+
+.actions-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; 
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-btn{
+  background-color: #08439b !important;
+  border-color: #08439b !important;
+}
+
+.icon {
+  font-size: 1.2rem;
+}
+
+.custom-dropdown-btn {
+  height: 3.125rem;
+  display: flex;
+  /* background-color: #08439b !important;
+  border-color: #08439b !important; */
+}
+
+.floating-label {
+  display: flex;
+  align-items: center;
+  height: 3.125rem; 
+}
+
+.background{
+  background-color: rgb(8, 163, 184) !important;
+  color: white !important;
+}
+
+
+.gradient-custom {
+  background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
+}
+
