@@ -22,7 +22,7 @@ function Dashboard() {
         <>
             <Container fluid>
                 <NavBar />
-                <Carousel className="my-carousel mt-4" interval={2000}>
+                <Carousel className="my-carousel mt-3" interval={2000}>
                     <Carousel.Item>
                         <img
                             className="d-block w-100"

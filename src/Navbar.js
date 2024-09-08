@@ -1,14 +1,19 @@
 import "./App.css";
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { MdMiscellaneousServices } from "react-icons/md";
-import { IoSave } from "react-icons/io5";
-import { IoStatsChart } from "react-icons/io5";
+import { IoSave, IoStatsChart, IoNotificationsCircleSharp } from "react-icons/io5";
 import { RiErrorWarningFill } from "react-icons/ri";
 import { FaHome, FaUserCircle } from 'react-icons/fa';
-import { Container, Row, Col, Nav, Image, Navbar, Form, NavDropdown } from 'react-bootstrap';
+import { Container, Row, Col, Nav, Image, Navbar, NavDropdown } from 'react-bootstrap';
 
-function NavBar(){
-    return(
+function NavBar() {
+    const [show, setShow] = useState(false);
+    const [notificationCount, setNotificationCount] = useState(3);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true); 
+
+    return (
         <>
             <Row className="bg-body-secondary align-items-center py-2">
                 <Col xs={2} className="text-start">
@@ -66,14 +71,23 @@ function NavBar(){
                             </Nav>
                         </Col>
                         <Col xs={8} className="text-center"></Col>
-                        <Col xs={2} className="text-end">
-                            <Nav>
-                                <Form.Control
-                                    type="search"
-                                    placeholder="Search"
-                                    className="me-1 shadow"
-                                    aria-label="Search"
-                                />
+                        <Col xs={2} className="text-end d-flex align-items-center justify-content-end position-relative">
+                            <Nav className="d-flex align-items-center">
+                                <Nav.Item className="position-relative me-2">
+                                    <Nav.Link as={NavLink} to="/requestaccess" style={{ padding: 0, margin: 0 }}>
+                                        <IoNotificationsCircleSharp 
+                                            size={37}
+                                            onClick={handleShow}
+                                            style={{ cursor: 'pointer' }}
+                                        />
+                                        {notificationCount > 0 && (
+                                            <span className="position-absolute translate-middle badge rounded-pill bg-danger">
+                                                {notificationCount}
+                                                <span className="visually-hidden">unread messages</span>
+                                            </span>
+                                        )}
+                                    </Nav.Link>
+                                </Nav.Item>
                                 <Nav.Item>
                                     <NavDropdown
                                         title={<FaUserCircle size={30} />}
@@ -83,7 +97,6 @@ function NavBar(){
                                         drop="bottom" 
                                     >
                                         <NavDropdown.Item as={NavLink} to="/userprofile">User Profile</NavDropdown.Item>
-                                        <NavDropdown.Item as={NavLink} to="/requestaccess">Request Access</NavDropdown.Item>
                                         <NavDropdown.Divider />
                                         <NavDropdown.Item as={NavLink} to="/">Logout</NavDropdown.Item>
                                     </NavDropdown>

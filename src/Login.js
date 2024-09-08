@@ -4,6 +4,7 @@ import InputGroupText from 'react-bootstrap/esm/InputGroupText';
 import { FaUserAlt } from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { FaIdBadge } from "react-icons/fa";
+import { NavLink } from 'react-router-dom';
 import './App.css';
 
 function Login() {
@@ -67,7 +68,9 @@ function Login() {
                                         </FloatingLabel>
                                     </Col>
                                     <Col>
-                                        <Button variant="primary" className='w-100 fw-bold login-btn'>Login</Button>
+                                        <NavLink to="/dashboard">
+                                            <Button variant="primary" className='w-100 fw-bold login-btn'>Login</Button>
+                                        </NavLink>
                                     </Col>
                                 </Row>
                             </Form>
