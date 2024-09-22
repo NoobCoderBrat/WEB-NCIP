@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Nav, Card, Button, ListGroup, ProgressBar } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import NavBar from './Navbar.js';
 import './App.css';
 
@@ -23,6 +23,10 @@ const UserProfile = () => {
                                 <Card.Title className="my-3">Marion Jotohot</Card.Title>
                                 <Card.Text className="text-muted mb-1">Project Head II</Card.Text>
                                 <Card.Text className="text-muted mb-4">Brgy. Lumbocan Butuan City</Card.Text>
+                                <div className='d-flex gap-2 justify-content-center'>
+                                    <Button variant='outline-primary' className='w-25 fw-bold'>Edit</Button>
+                                    <Button variant="primary" className='w-25 fw-bold'>Save</Button>
+                                </div>
                             </Card.Body>
                         </Card>
                     </Col>

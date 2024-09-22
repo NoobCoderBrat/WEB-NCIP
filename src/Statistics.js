@@ -8,7 +8,7 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, PointElement, LineEleme
 
 function Statistics() {
   const monthlyData = {
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    labels: ['CADT 118', 'CADT 135', 'CADT 252'],
     datasets: [{
       label: 'Monthly Census Records',
       data: [50, 60, 70, 80, 55, 65, 75, 85, 90, 100, 95, 105],
@@ -20,7 +20,7 @@ function Statistics() {
   };
 
   const quarterlyData = {
-    labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+    labels: ['Children', 'Youth', 'Adult', 'Elderly'],
     datasets: [{
       label: 'Quarterly Census Records',
       data: [180, 210, 240, 290],
@@ -29,12 +29,30 @@ function Statistics() {
   };
 
   const annuallyData = {
-    labels: ['2021', '2022', '2023', '2024'],
-    datasets: [{
-      label: 'Annual Census Records',
-      data: [1000, 1200, 1400, 1600],
-      backgroundColor: 'rgba(255, 159, 64, 0.6)',
-    }]
+    labels: ['2021', '2022', '2023'],
+    datasets: [
+      {
+        label: 'CADT 118',
+        data: [300, 400, 500],
+        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        borderWidth: 1,
+      },
+      {
+        label: 'CADT 135',
+        data: [600, 700, 800],
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1,
+      },
+      {
+        label: 'CADT 252',
+        data: [900, 1000, 1100],
+        backgroundColor: 'rgba(255, 206, 86, 0.2)',
+        borderColor: 'rgba(255, 206, 86, 1)',
+        borderWidth: 1,
+      },
+    ],
   };
 
   return (
@@ -48,24 +66,24 @@ function Statistics() {
           </Col>
         </Row>
         <Row className="justify-content-center">
-          <Col md={4}>
-            <Card className="shadow">
+          <Col md={5}>
+            <Card className="shadow mb-4">
               <Card.Body>
-                <h5 className="text-center">Monthly Census Records</h5>
+                <h5 className="text-center">Numbers of IP's and Non IP's per CADT</h5>
                 <Line data={monthlyData} options={{ responsive: true }} />
               </Card.Body>
             </Card>
           </Col>
-          <Col md={4}>
-            <Card className="shadow">
+          <Col md={5}>
+            <Card className="shadow mb-4">
               <Card.Body>
-                <h5 className="text-center">Quarterly Census Records</h5>
+                <h5 className="text-center">By Age Group per CADT</h5>
                 <Bar data={quarterlyData} options={{ responsive: true }} />
               </Card.Body>
             </Card>
           </Col>
-          <Col md={4}>
-            <Card className="shadow">
+          <Col md={5}>
+            <Card className="shadow mb-5">
               <Card.Body>
                 <h5 className="text-center">Annual Census Records</h5>
                 <Bar

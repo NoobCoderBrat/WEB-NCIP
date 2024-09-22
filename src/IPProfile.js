@@ -61,8 +61,11 @@ const IPProfile = () => {
                             <Form.Label column sm="1">Show Only:</Form.Label>
                             <Col sm="10">
                                 <div className="d-flex">
-                                    <Form.Select aria-label="Default select example" className='w-25 shadow'>
+                                    <Form.Select aria-label="Default select example" className='w-50 shadow'>
                                         <option></option>
+                                        <option>CADT 118</option>
+                                        <option>CADT 135</option>
+                                        <option>CADT 252</option>
                                         <option value="1">IP with Illness</option>
                                         <option value="2">Senior Citizen</option>
                                         <option value="3">Household with no own house</option>
@@ -443,8 +446,8 @@ const IPProfile = () => {
                         </Row>
                     </Form>
                 </Modal.Body>
-                <Modal.Footer className='d-flex justify-content-end'>
-                    <Button variant="primary" className='login-btn fw-bold w-25' onClick={handleSave}>
+                <Modal.Footer className='d-flex justify-content-center'>
+                    <Button variant="primary" className='login-btn fw-bold w-md-50' onClick={handleSave}>
                         Save Changes
                     </Button>
                 </Modal.Footer>

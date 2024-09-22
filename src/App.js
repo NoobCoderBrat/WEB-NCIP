@@ -2,7 +2,6 @@ import { Routes, Route } from "react-router-dom";
 import Login from "./Login.js";
 import Dashboard from "./Dashboard.js"
 import IssuanceOfCoc from "./IssuanceOfCoc.js";
-import HealthServices from "./HealthServices.js";
 import EducationalAssistance from "./EducationalAssistance.js";
 import IPForm from "./IPForm.js";
 import IPProfile from "./IPProfile.js";
@@ -18,7 +17,6 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/issuanceofcoc" element={<IssuanceOfCoc />} />
-        <Route path="/healthservices" element={<HealthServices />} />
         <Route path="/educationalassistance" element={<EducationalAssistance />} />
         <Route path="/ipform" element={<IPForm />} />
         <Route path="/ipprofile" element={<IPProfile />} />

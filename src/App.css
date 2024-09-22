@@ -54,7 +54,7 @@
 
 .my-carousel .carousel-item img {
   width: auto;
-  height: 600px;
+  height: 520px;
 }
 
 .shadow{
@@ -166,8 +166,17 @@
   color: white !important;
 }
 
+@media (max-width: 600px) {
+    .search-group {
+        flex-direction: column; /* Stack label and input */
+        align-items: flex-start; /* Align items to the start */
+    }
 
-.gradient-custom {
-  background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
+    .search-group .form-label {
+        margin-bottom: 5px; /* Space between label and input */
+    }
+
+    .search-group .form-control {
+        width: 100%; /* Make search bar full width */
+    }
 }
-
