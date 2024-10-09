@@ -6,13 +6,15 @@ import { IoSave, IoStatsChart, IoNotificationsCircleSharp } from "react-icons/io
 import { RiErrorWarningFill } from "react-icons/ri";
 import { FaHome, FaUserCircle } from 'react-icons/fa';
 import { Container, Row, Col, Nav, Image, Navbar, NavDropdown, Offcanvas } from 'react-bootstrap';
+import supabase from "./config/supabaseClient";
 
 function NavBar() {
     const [show, setShow] = useState(false);
-    const [notificationCount, setNotificationCount] = useState(3);
+    const [notificationCount, setNotificationCount] = useState('');
     const [isMobile, setIsMobile] = useState(window.innerWidth < 992); 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const role = sessionStorage.getItem("role");
 
     useEffect(() => {
         const handleResize = () => {
@@ -23,6 +25,28 @@ function NavBar() {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+    const fetch_data = async () => {
+        try {
+            const { error, data } = await supabase
+                .from('users')
+                .select('*')
+                .eq('is_verified', 'false')
+         
+            console.log(data);
+            setNotificationCount(data.length);
+         
+    
+        } catch (error) {
+            alert("An unexpected error occurred.");
+            console.error('Error during registration:', error.message);
+        }
+    }
+     
+    useEffect(() => {
+      fetch_data();
+    }, []);
+    
+    
     return (
         <>
             <div className="d-none d-lg-block shadow mb-2">
@@ -85,20 +109,22 @@ function NavBar() {
                         <Col xs={8} className="text-center"></Col>
                         <Col xs={2} className="text-end d-flex align-items-center justify-content-end position-relative">
                             <Nav className="d-flex align-items-center">
+                                {role !== "Employee" && (
                                 <Nav.Item className="position-relative me-2">
                                     <Nav.Link as={NavLink} to="/requestaccess" style={{ padding: 0, margin: 0 }}>
-                                        <IoNotificationsCircleSharp 
-                                            size={37}
-                                            style={{ cursor: 'pointer' }}
-                                        />
-                                        {notificationCount > 0 && (
-                                            <span className="position-absolute translate-middle badge rounded-pill bg-danger">
-                                                {notificationCount}
-                                                <span className="visually-hidden">unread messages</span>
-                                            </span>
-                                        )}
+                                    <IoNotificationsCircleSharp 
+                                        size={37}
+                                        style={{ cursor: 'pointer' }}
+                                    />
+                                    {notificationCount > 0 && (
+                                        <span className="position-absolute translate-middle badge rounded-pill bg-danger">
+                                        {notificationCount}
+                                        <span className="visually-hidden">unread messages</span>
+                                        </span>
+                                    )}
                                     </Nav.Link>
                                 </Nav.Item>
+                                )}
                                 <Nav.Item>
                                     <NavDropdown
                                         title={<FaUserCircle size={30} />}

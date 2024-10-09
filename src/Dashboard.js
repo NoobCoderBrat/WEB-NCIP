@@ -65,7 +65,7 @@ function Dashboard() {
                         <Card className='shadow'>
                             <Card.Body>
                                 <Card className='shadow background'>
-                                    <Card.Body className='p-5'>
+                                    <Card.Body className='pb-5 pt-5'>
                                         <h2 className='d-flex justify-content-center font'>VISION</h2>
                                         <p className='text'>
                                             An esteemed Commission committed to the delivery of quality services to ICCs/IPs 
