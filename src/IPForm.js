@@ -91,212 +91,244 @@ function IPForm() {
     <Container fluid>
       <NavBar />
       <Container className="mt-3">
-        <Card className="p-3 shadow mb-5">
-          <Card.Body className="text">
-            <Row>
-              <Col xs={12} md={6} className="mb-3">
-                <FloatingLabel controlId="floatingCADT" label="CADT" className="mb-2">
-                  <Form.Control
-                    type="text"
-                    placeholder="CADT"
-                    name="cadt"
-                    value={formData.cadt}
-                    onChange={handleChange}
-                  />
-                </FloatingLabel>
-                <FloatingLabel controlId="floatingIPGroup" label="IP Group" className="mb-2">
-                  <Form.Control
-                    type="text"
-                    placeholder="IP Group"
-                    name="ip_group"
-                    value={formData.ip_group}
-                    onChange={handleChange}
-                  />
-                </FloatingLabel>
-                <FloatingLabel controlId="floatingLeader" label="Recognized Leader" className="mb-2">
-                  <Form.Control
-                    type="text"
-                    placeholder="Recognized Leader"
-                    name="recognized_leader"
-                    value={formData.recognized_leader}
-                    onChange={handleChange}
-                  />
-                </FloatingLabel>
-                <FloatingLabel controlId="floatingName" label="Name" className="mb-2">
-                  <Form.Control
-                    type="text"
-                    placeholder="Name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                  />
-                </FloatingLabel>
-                <FloatingLabel controlId="floatingAge" label="Age" className="mb-2">
-                  <Form.Control
-                    type="text"
-                    placeholder="Age"
-                    name="age"
-                    value={formData.age}
-                    onChange={handleChange}
-                  />
-                </FloatingLabel>
-                <FloatingLabel controlId="floatingBirthdate" label="Birthdate" className="mb-2">
-                  <Form.Control
-                    type="text"
-                    placeholder="Birthdate"
-                    name="birthdate"
-                    value={formData.birthdate}
-                    onChange={handleChange}
-                  />
-                </FloatingLabel>
-                <FloatingLabel controlId="floatingBirthdate" label="Birthplace" className="mb-2">
-                  <Form.Control
-                    type="text"
-                    placeholder="Birthplace"
-                    name="birthplace"
-                    value={formData.birthplace}
-                    onChange={handleChange}
-                  />
-                </FloatingLabel>
-                <FloatingLabel controlId="floatingAddress" label="Address" className="mb-2">
-                  <Form.Control
-                    type="text"
-                    placeholder="Address"
-                    name="address"
-                    value={formData.address}
-                    onChange={handleChange}
-                  />
-                </FloatingLabel>
+          <Form onSubmit={handleSubmit}>
+      <Card className="p-3 shadow mb-5">
+        <Card.Body className="text">
+          <Row>
+            <Col xs={12} md={6} className="mb-3">
+              <FloatingLabel controlId="floatingCADT" label="CADT" className="mb-2">
+                <Form.Select
+                  name="cadt"
+                  value={formData.cadt}
+                  onChange={handleChange}
+                  required
+                >
+                  <option value="">Select CADT</option>
+                  <option value="CADT 118">CADT 118</option>
+                  <option value="CADT 135">CADT 135</option>
+                  <option value="CADT 252">CADT 252</option>
+                </Form.Select>
+              </FloatingLabel>
 
-                <p className="font">Gender</p>
-                <Row className="mb-3">
-                  {["Male", "Female", "LGBTQ"].map((gender) => (
-                    <Col key={gender} xs={4} sm={3} md={2}>
-                      <Form.Check
-                        type="checkbox"
-                        label={gender}
-                        value={gender}
-                        checked={formData.gender.includes(gender)}
-                        onChange={(e) => handleCheckboxChange(e, "gender")}
-                      />
-                    </Col>
-                  ))}
-                </Row>
+              <FloatingLabel controlId="floatingIPGroup" label="IP Group" className="mb-2">
+                <Form.Control
+                  type="text"
+                  placeholder="IP Group"
+                  name="ip_group"
+                  value={formData.ip_group}
+                  onChange={handleChange}
+                  required
+                />
+              </FloatingLabel>
 
-                <p className="font">Available Documents</p>
-                <Row>
-                  {["Marriage Certificate", "PhilHealth", "Birth Certificate", "DSWD 4P's", "Pension"].map((doc) => (
-                    <Col key={doc} xs={6} sm={4} md={5}>
-                      <Form.Check
-                        type="checkbox"
-                        label={doc}
-                        value={doc}
-                        checked={formData.available_documents.includes(doc)}
-                        onChange={(e) => handleCheckboxChange(e, "available_documents")}
-                      />
-                    </Col>
-                  ))}
-                </Row>
-              </Col>
+              <FloatingLabel controlId="floatingLeader" label="Recognized Leader" className="mb-2">
+                <Form.Control
+                  type="text"
+                  placeholder="Recognized Leader"
+                  name="recognized_leader"
+                  value={formData.recognized_leader}
+                  onChange={handleChange}
+                  required
+                />
+              </FloatingLabel>
 
-              <Col xs={12} md={6}>
-                <p className="font">Education</p>
-                <FloatingLabel controlId="floatingGradeLevel" label="Grade Level" className="mb-2">
-                  <Form.Control
-                    type="text"
-                    placeholder="Grade Level"
-                    name="grade_level"
-                    value={formData.grade_level}
-                    onChange={handleChange}
-                  />
-                </FloatingLabel>
-                <FloatingLabel controlId="floatingGradeLevel" label="School" className="mb-2">
-                  <Form.Control
-                    type="text"
-                    placeholder="School"
-                    name="school"
-                    value={formData.school}
-                    onChange={handleChange}
-                  />
-                </FloatingLabel>
+              <FloatingLabel controlId="floatingName" label="Name" className="mb-2">
+                <Form.Control
+                  type="text"
+                  placeholder="Name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
+              </FloatingLabel>
 
-                <p className="font">EAP Scholar</p>
-                <Row>
-                  {["Yes", "No"].map((answer) => (
-                    <Col key={answer} xs={4} sm={3}>
-                      <Form.Check
-                        type="radio"
-                        label={answer}
-                        name="eap_scholar"
-                        value={answer}
-                        checked={formData.eap_scholar === answer}
-                        onChange={handleChange}
-                      />
-                    </Col>
-                  ))}
-                </Row>
+              <FloatingLabel controlId="floatingAge" label="Age" className="mb-2">
+                <Form.Control
+                  type="text"
+                  placeholder="Age"
+                  name="age"
+                  value={formData.age}
+                  onChange={handleChange}
+                  required
+                />
+              </FloatingLabel>
 
-                <p className="font">House</p>
-                <Row>
-                  {["Owned", "Rented", "Lived with Parents"].map((status) => (
-                    <Col key={status} xs={4} sm={3}>
-                      <Form.Check
-                        type="radio"
-                        label={status}
-                        name="house"
-                        value={status}
-                        checked={formData.house === status}
-                        onChange={handleChange}
-                      />
-                    </Col>
-                  ))}
-                </Row>
+              <FloatingLabel controlId="floatingBirthdate" label="Birthdate" className="mb-2">
+                <Form.Control
+                  type="date"
+                  placeholder="Birthdate"
+                  name="birthdate"
+                  value={formData.birthdate}
+                  onChange={handleChange}
+                  required
+                />
+              </FloatingLabel>
 
-                <p className="font">Type of House</p>
-                <Row>
-                  {["Light Material", "Semi Concrete", "Concrete"].map((type) => (
-                    <Col key={type} xs={4}>
-                      <Form.Check
-                        type="radio"
-                        label={type}
-                        name="type_of_house"
-                        value={type}
-                        checked={formData.type_of_house === type}
-                        onChange={handleChange}
-                      />
-                    </Col>
-                  ))}
-                </Row>
+              <FloatingLabel controlId="floatingBirthplace" label="Birthplace" className="mb-2">
+                <Form.Control
+                  type="text"
+                  placeholder="Birthplace"
+                  name="birthplace"
+                  value={formData.birthplace}
+                  onChange={handleChange}
+                  required
+                />
+              </FloatingLabel>
 
-                <p className="font">Health Concerns</p>
-                <FloatingLabel controlId="floatingIllness" label="Type of Illness" className="mb-2">
-                  <Form.Control
-                    type="text"
-                    placeholder="Type of Illness"
-                    name="type_of_illness"
-                    value={formData.type_of_illness}
-                    onChange={handleChange}
-                  />
-                </FloatingLabel>
-                <FloatingLabel controlId="floatingDuration" label="How long" className="mb-2">
-                  <Form.Control
-                    type="text"
-                    placeholder="How long"
-                    name="duration"
-                    value={formData.duration}
-                    onChange={handleChange}
-                  />
-                </FloatingLabel>
+              <FloatingLabel controlId="floatingAddress" label="Address" className="mb-2">
+                <Form.Control
+                  type="text"
+                  placeholder="Address"
+                  name="address"
+                  value={formData.address}
+                  onChange={handleChange}
+                  required
+                />
+              </FloatingLabel>
 
-                <Container className="d-flex justify-content-center mt-5">
-                  <Button className="w-50 fw-bold login-btn" variant="primary" onClick={handleSubmit}>
-                    Save
-                  </Button>
-                </Container>
-              </Col>
-            </Row>
-          </Card.Body>
-        </Card>
+              <p className="font">Gender</p>
+              <Row className="mb-3">
+                {["Male", "Female", "LGBTQ"].map((gender) => (
+                  <Col key={gender} xs={4} sm={3} md={2}>
+                    <Form.Check
+                      type="checkbox"
+                      label={gender}
+                      value={gender}
+                      checked={formData.gender.includes(gender)}
+                      onChange={(e) => handleCheckboxChange(e, "gender")}
+                      required={formData.gender.length === 0} // Ensures at least one checkbox is selected
+                    />
+                  </Col>
+                ))}
+              </Row>
+
+              <p className="font">Available Documents</p>
+              <Row>
+                {["Marriage Certificate", "PhilHealth", "Birth Certificate", "DSWD 4P's", "Pension"].map((doc) => (
+                  <Col key={doc} xs={6} sm={4} md={5}>
+                    <Form.Check
+                      type="checkbox"
+                      label={doc}
+                      value={doc}
+                      checked={formData.available_documents.includes(doc)}
+                      onChange={(e) => handleCheckboxChange(e, "available_documents")}
+                      required={formData.available_documents.length === 0} // Ensures at least one checkbox is selected
+                    />
+                  </Col>
+                ))}
+              </Row>
+            </Col>
+
+            <Col xs={12} md={6}>
+              <p className="font">Education</p>
+              <FloatingLabel controlId="floatingGradeLevel" label="Grade Level" className="mb-2">
+                <Form.Control
+                  type="text"
+                  placeholder="Grade Level"
+                  name="grade_level"
+                  value={formData.grade_level}
+                  onChange={handleChange}
+                  required
+                />
+              </FloatingLabel>
+
+              <FloatingLabel controlId="floatingSchool" label="School" className="mb-2">
+                <Form.Control
+                  type="text"
+                  placeholder="School"
+                  name="school"
+                  value={formData.school}
+                  onChange={handleChange}
+                  required
+                />
+              </FloatingLabel>
+
+              <p className="font">EAP Scholar</p>
+              <Row>
+                {["Yes", "No"].map((answer) => (
+                  <Col key={answer} xs={4} sm={3}>
+                    <Form.Check
+                      type="radio"
+                      label={answer}
+                      name="eap_scholar"
+                      value={answer}
+                      checked={formData.eap_scholar === answer}
+                      onChange={handleChange}
+                      required
+                    />
+                  </Col>
+                ))}
+              </Row>
+
+              <p className="font">House</p>
+              <Row>
+                {["Owned", "Rented", "Lived with Parents"].map((status) => (
+                  <Col key={status} xs={4} sm={3}>
+                    <Form.Check
+                      type="radio"
+                      label={status}
+                      name="house"
+                      value={status}
+                      checked={formData.house === status}
+                      onChange={handleChange}
+                      required
+                    />
+                  </Col>
+                ))}
+              </Row>
+
+              <p className="font">Type of House</p>
+              <Row>
+                {["Light Material", "Semi Concrete", "Concrete"].map((type) => (
+                  <Col key={type} xs={4}>
+                    <Form.Check
+                      type="radio"
+                      label={type}
+                      name="type_of_house"
+                      value={type}
+                      checked={formData.type_of_house === type}
+                      onChange={handleChange}
+                      required
+                    />
+                  </Col>
+                ))}
+              </Row>
+
+              <p className="font">Health Concerns</p>
+              <FloatingLabel controlId="floatingIllness" label="Type of Illness" className="mb-2">
+                <Form.Control
+                  type="text"
+                  placeholder="Type of Illness"
+                  name="type_of_illness"
+                  value={formData.type_of_illness}
+                  onChange={handleChange}
+                  required
+                />
+              </FloatingLabel>
+
+              <FloatingLabel controlId="floatingDuration" label="How long" className="mb-2">
+                <Form.Control
+                  type="text"
+                  placeholder="How long"
+                  name="duration"
+                  value={formData.duration}
+                  onChange={handleChange}
+                  required
+                />
+              </FloatingLabel>
+
+              <Container className="d-flex justify-content-center mt-5">
+                <Button className="w-50 fw-bold login-btn" variant="primary" type="submit">
+                  Save
+                </Button>
+              </Container>
+            </Col>
+          </Row>
+        </Card.Body>
+      </Card>
+    </Form>
+
       </Container>
     </Container>
   );

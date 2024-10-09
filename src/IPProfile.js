@@ -92,6 +92,29 @@ const IPProfile = () => {
         }
     };
 
+    const deleteData = async (id) => {
+        const confirmDelete = window.confirm("Are you sure you want to delete this record?");
+        if (!confirmDelete) return;
+    
+        try {
+            const { error } = await supabase
+                .from('census_data')
+                .delete()
+                .eq('id', id);
+    
+            if (error) {
+                throw error;
+            }
+    
+            alert("Record deleted successfully!");
+            fetch_data(); // Refresh the data after deletion
+        } catch (error) {
+            alert("Error deleting data.");
+            console.error("Delete error: ", error.message);
+        }
+    };
+    
+
     const fetch_data = async () => {
         try {
             const { error, data } = await supabase
@@ -300,7 +323,11 @@ const IPProfile = () => {
                                         >
                                             <FaEdit className="icon" />
                                         </Button>
-                                        <Button variant="danger" className="action-button">
+                                        <Button
+                                            variant="danger"
+                                            className="action-button"
+                                            onClick={() => deleteData(data.id)}
+                                        >
                                             <FaTrash className="icon" />
                                         </Button>
                                     </td>
