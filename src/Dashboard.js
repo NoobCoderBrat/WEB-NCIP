@@ -87,7 +87,7 @@ function Dashboard() {
                     <div className="align-items-center">
                         <Row className="d-flex flex-column flex-md-row align-items-center">
                             <Col xs={12} md={3} className="text-center">
-                                <Image src="https://via.placeholder.com/150" roundedCircle width="190" height="190" />
+                                <Image src="Edgielit.jpg" roundedCircle width="190" height="190" />
                             </Col>
                             <Col xs={12} md={9} className="d-flex flex-column text-center text-md-start">
                                 <h3>Edgielit Pajarillo</h3>
@@ -103,7 +103,7 @@ function Dashboard() {
                                 <p>Midwife II</p>
                             </Col>
                             <Col xs={12} md={3} className="text-center">
-                                <Image src="https://via.placeholder.com/150" roundedCircle width="190" height="190" />
+                                <Image src="Emie.jpg" roundedCircle width="190" height="190" />
                             </Col>
                         </Row>
                     </div>
@@ -111,7 +111,7 @@ function Dashboard() {
                     <div className="align-items-center">
                         <Row className="d-flex flex-column flex-md-row align-items-center">
                             <Col xs={12} md={3} className="text-center">
-                                <Image src="https://via.placeholder.com/150" roundedCircle width="190" height="190" />
+                                <Image src="Bernard.jpg" roundedCircle width="190" height="190" />
                             </Col>
                             <Col xs={12} md={9} className="d-flex flex-column text-center text-md-start">
                                 <h3>Bernard Taray</h3>
@@ -127,7 +127,7 @@ function Dashboard() {
                                 <p>Administrative Aide IV</p>
                             </Col>
                             <Col xs={12} md={3} className="text-center">
-                                <Image src="https://via.placeholder.com/150" roundedCircle width="190" height="190" />
+                                <Image src="Charry.jpg" roundedCircle width="190" height="190" />
                             </Col>
                         </Row>
                     </div>
@@ -135,7 +135,7 @@ function Dashboard() {
                     <div className="align-items-center">
                         <Row className="d-flex flex-column flex-md-row align-items-center">
                             <Col xs={12} md={3} className="text-center">
-                                <Image src="https://via.placeholder.com/150" roundedCircle width="190" height="190" />
+                                <Image src="Arquila.jpg" roundedCircle width="190" height="190" />
                             </Col>
                             <Col xs={12} md={9} className="d-flex flex-column text-center text-md-start">
                                 <h3>Arquila Gando</h3>
@@ -151,7 +151,7 @@ function Dashboard() {
                                 <p>Dentist II</p>
                             </Col>
                             <Col xs={12} md={3} className="text-center">
-                                <Image src="https://via.placeholder.com/150" roundedCircle width="190" height="190" />
+                                <Image src="Eleanor.jpg" roundedCircle width="190" height="190" />
                             </Col>
                         </Row>
                     </div>
@@ -159,7 +159,7 @@ function Dashboard() {
                     <div className="align-items-center">
                         <Row className="d-flex flex-column flex-md-row align-items-center">
                             <Col xs={12} md={3} className="text-center">
-                                <Image src="https://via.placeholder.com/150" roundedCircle width="190" height="190" />
+                                <Image src="Concepcion.jpg" roundedCircle width="190" height="190" />
                             </Col>
                             <Col xs={12} md={9} className="d-flex flex-column text-center text-md-start">
                                 <h3>Concepcion Uson</h3>
@@ -175,7 +175,7 @@ function Dashboard() {
                                 <p>Technical Staff</p>
                             </Col>
                             <Col xs={12} md={3} className="text-center">
-                                <Image src="https://via.placeholder.com/150" roundedCircle width="190" height="190" />
+                                <Image src="Maria.jpg" roundedCircle width="190" height="190" />
                             </Col>
                         </Row>
                     </div>
@@ -183,7 +183,7 @@ function Dashboard() {
                     <div className="align-items-center">
                         <Row className="d-flex flex-column flex-md-row align-items-center">
                             <Col xs={12} md={3} className="text-center">
-                                <Image src="https://via.placeholder.com/150" roundedCircle width="190" height="190" />
+                                <Image src="Welmar.jpg" roundedCircle width="190" height="190" />
                             </Col>
                             <Col xs={12} md={9} className="d-flex flex-column text-center text-md-start">
                                 <h3>Welmar Sulhayan</h3>
@@ -199,7 +199,7 @@ function Dashboard() {
                                 <p>Technical Staff</p>
                             </Col>
                             <Col xs={12} md={3} className="text-center">
-                                <Image src="https://via.placeholder.com/150" roundedCircle width="190" height="190" />
+                                <Image src="Starry.jpg" roundedCircle width="190" height="190" />
                             </Col>
                         </Row>
                     </div>
@@ -207,7 +207,7 @@ function Dashboard() {
                     <div className="align-items-center">
                         <Row className="d-flex flex-column flex-md-row align-items-center">
                             <Col xs={12} md={3} className="text-center">
-                                <Image src="https://via.placeholder.com/150" roundedCircle width="190" height="190" />
+                                <Image src="Gayo.jpg" roundedCircle width="190" height="190" />
                             </Col>
                             <Col xs={12} md={9} className="d-flex flex-column text-center text-md-start">
                                 <h3>Gayo Kahuya</h3>
