@@ -5,7 +5,7 @@ import { Container, Form, Row, Col, FloatingLabel, Card, Button } from "react-bo
 import supabase from "./config/supabaseClient.js";
 
 function IPForm() {
-  // Create a single state object to store the entire form data
+  const [category, setCategory] = useState('');
   const [formData, setFormData] = useState({
     cadt: '',
     ip_group: '',
@@ -15,7 +15,7 @@ function IPForm() {
     birthdate: '',
     birthplace: '',
     address: '',
-    gender: [],
+    gender: '',
     available_documents: [],
     grade_level: '',
     school: '',
@@ -26,7 +26,7 @@ function IPForm() {
     duration: ''
   });
 
-  // General handle change function for text inputs
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -35,7 +35,7 @@ function IPForm() {
     });
   };
 
-  // Handle checkbox changes (for multiple selections like gender or available documents)
+
   const handleCheckboxChange = (e, groupName) => {
     const { value, checked } = e.target;
     setFormData((prevData) => {
@@ -43,8 +43,8 @@ function IPForm() {
       return {
         ...prevData,
         [groupName]: checked
-          ? [...group, value] // Add if checked
-          : group.filter((item) => item !== value), // Remove if unchecked
+          ? [...group, value] 
+          : group.filter((item) => item !== value), 
       };
     });
   };
@@ -61,17 +61,18 @@ function IPForm() {
             name: formData.name,
             age: formData.age,
             gender: formData.gender,
-            birth_date: formData.birthdate,  // Ensure form field names match your formData
-            birth_place: formData.birthplace, // Add this to your form if missing
+            birth_date: formData.birthdate, 
+            birth_place: formData.birthplace, 
             address: formData.address,
             available_documents: formData.available_documents,
             grade_level: formData.grade_level,
-            school: formData.school,          // Add this to your form if missing
+            school: formData.school,     
             eap_scholar: formData.eap_scholar,
             house: formData.house,
             type_of_house: formData.type_of_house,
             type_of_illness: formData.type_of_illness,
             how_long: formData.duration,
+            category,
           }
         ]);
   
@@ -96,6 +97,18 @@ function IPForm() {
         <Card.Body className="text">
           <Row>
             <Col xs={12} md={6} className="mb-3">
+            <FloatingLabel controlId="floatingCADT" label="IP Status" className="mb-2">
+                <Form.Select
+                  name=""
+                  value={category}
+                  onChange={(e) => setCategory(e.target.value)}
+                  required
+                >
+                  <option value="">Select IP STATUS</option>
+                  <option value="IP">IP</option>
+                  <option value="NON-IP">NON-IP</option>
+                </Form.Select>
+              </FloatingLabel>
               <FloatingLabel controlId="floatingCADT" label="CADT" className="mb-2">
                 <Form.Select
                   name="cadt"
@@ -186,23 +199,19 @@ function IPForm() {
                   required
                 />
               </FloatingLabel>
-
-              <p className="font">Gender</p>
-              <Row className="mb-3">
-                {["Male", "Female", "LGBTQ"].map((gender) => (
-                  <Col key={gender} xs={4} sm={3} md={2}>
-                    <Form.Check
-                      type="checkbox"
-                      label={gender}
-                      value={gender}
-                      checked={formData.gender.includes(gender)}
-                      onChange={(e) => handleCheckboxChange(e, "gender")}
-                      required={formData.gender.length === 0} // Ensures at least one checkbox is selected
-                    />
-                  </Col>
-                ))}
-              </Row>
-
+              <FloatingLabel controlId="floatingCADT" label="Gender" className="mb-2">
+                <Form.Select
+                  name="cadt"
+                  value={formData.gender}
+                  onChange={handleChange}
+                  required
+                >
+                  <option value="">Select Gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="LGBT">LGBT</option>
+                </Form.Select>
+              </FloatingLabel>
               <p className="font">Available Documents</p>
               <Row>
                 {["Marriage Certificate", "PhilHealth", "Birth Certificate", "DSWD 4P's", "Pension"].map((doc) => (
@@ -263,7 +272,7 @@ function IPForm() {
 
               <p className="font">House</p>
               <Row>
-                {["Owned", "Rented", "Lived with Parents"].map((status) => (
+                {["Owned", "Rented", "Living with Parents"].map((status) => (
                   <Col key={status} xs={4} sm={3}>
                     <Form.Check
                       type="radio"

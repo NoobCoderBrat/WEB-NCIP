@@ -25,7 +25,7 @@ function Login() {
     const login = async (e) => {
         e.preventDefault();
 
-        if (!name || !password ) {
+        if (!id || !password ) {
             alert("Please enter both email and password.");
             return;
         }
@@ -36,8 +36,7 @@ function Login() {
                 .select('*')
                 .eq('idnumber', id)
                 .single();
-            if (data && data.password === password && data.idnumber === id && data.role === role && data.name === name) {
-                alert('Login successful');
+            if (data && data.password === password && data.idnumber === id) {
                 const role = data.role;
                 sessionStorage.setItem('role', role);
                 const user_id = data.idnumber;
@@ -148,16 +147,6 @@ function Login() {
                                         <Form.Control type="text" placeholder="ID" autoComplete='off' required/>
                                     </FloatingLabel>
                                 </InputGroup>
-                                <InputGroup className="mb-2">
-                                    <InputGroupText><FaUserAlt /></InputGroupText>
-                                    <FloatingLabel 
-                                        controlId="floatingInput" 
-                                        label="Name"
-                                        value={name}
-                                        onChange={(e) => setName(e.target.value)}>
-                                        <Form.Control type="text" placeholder="Name" />
-                                    </FloatingLabel>
-                                </InputGroup>
                                 <InputGroup className="mb-3">
                                     <InputGroupText><RiLockPasswordFill /></InputGroupText>
                                     <FloatingLabel 
@@ -169,16 +158,7 @@ function Login() {
                                     </FloatingLabel>
                                 </InputGroup>
                                 <Row className="g-2 mb-4">
-                                    <Col xs={12} md={4} className="mb-2 mb-md-0">
-                                        <FloatingLabel controlId="floatingSelect" label="Login as:">
-                                            <Form.Select aria-label="Floating label select example"
-                                            value={role} onChange={(e) => setRole(e.target.value)}>
-                                                <option value="Admin">Admin</option>
-                                                <option value="Employee">Employee</option>
-                                            </Form.Select>
-                                        </FloatingLabel>
-                                    </Col>
-                                    <Col xs={12} md={8}>
+                                    <Col xs={12} md={12}>
                                             <Button variant="primary" className='w-100 fw-bold login-btn' onClick={login}>Login</Button>
                                     </Col>
                                 </Row>

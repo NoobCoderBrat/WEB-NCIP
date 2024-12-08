@@ -120,6 +120,7 @@ const IPProfile = () => {
             const { error, data } = await supabase
                 .from('census_data')
                 .select('*')
+                .order('created_at', { ascending: false });
             console.log(data);
             setUserData(data);
          

@@ -10,7 +10,7 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, PointElement, LineEleme
 
 function Statistics() {
   const [userdata, setUserData] =useState([]);
-  const [cadtCounts, setCadtCounts] = useState({ cadt118Count: 0, cadt135Count: 0, cadt252Count: 0 });
+  const [cadtCounts, setCadtCounts] = useState({ cadt118IP: 0, cadt135IP: 0, cadt252IP: 0, cadt118NonIP: 0, cadt135NonIP: 0, cadt252NonIP: 0 });
   const [cadt118, setCadt118] = useState({ cadtChildren118: 0, cadtYouth118: 0, cadtAdult118: 0, cadtElderly118: 0, });
   const [cadt135, setCadt135] = useState({ cadtChildren135: 0, cadtYouth135: 0, cadtAdult135: 0, cadtElderly135: 0, });
   const [cadt252, setCadt252] = useState({ cadtChildren252: 0, cadtYouth252: 0, cadtAdult252: 0, cadtElderly252: 0, });
@@ -20,15 +20,26 @@ function Statistics() {
 
   const monthlyData = {
     labels: ['CADT 118', 'CADT 135', 'CADT 252'],
-    datasets: [{
-      label: 'Total Census Records',
-      data: [cadtCounts.cadt118Count, cadtCounts.cadt135Count, cadtCounts.cadt252Count],
-      fill: false,
-      borderColor: 'rgba(75, 192, 192, 1)',
-      backgroundColor: 'rgba(75, 192, 192, 0.1)',
-      tension: 0.1
-    }]
+    datasets: [
+      {
+        label: 'IP Records',
+        data: [cadtCounts.cadt118IP, cadtCounts.cadt135IP, cadtCounts.cadt252IP], // Data for IP category
+        borderColor: 'rgba(75, 192, 192, 1)',
+        backgroundColor: 'rgba(75, 192, 192, 0.1)',
+        tension: 0.1,
+        fill: false
+      },
+      {
+        label: 'Non-IP Records',
+        data: [cadtCounts.cadt118NonIP, cadtCounts.cadt135NonIP, cadtCounts.cadt252NonIP], // Data for Non-IP category
+        borderColor: 'rgba(255, 99, 132, 1)',
+        backgroundColor: 'rgba(255, 99, 132, 0.1)',
+        tension: 0.1,
+        fill: false
+      }
+    ]
   };
+  
   const quarterlyData118 = {
     labels: ['Children', 'Youth', 'Adult', 'Elderly'],
     datasets: [{
@@ -91,11 +102,22 @@ function Statistics() {
         if (error) throw error;
 
       console.log(data);
-        
-        const cadt118Count = data.filter(item => item.cadt === 'CADT 118').length;
-        const cadt135Count = data.filter(item => item.cadt === 'CADT 135').length;
-        const cadt252Count = data.filter(item => item.cadt === 'CADT 252').length;
-        setCadtCounts({ cadt118Count, cadt135Count, cadt252Count });
+const cadt118IP = data.filter(item => item.cadt === 'CADT 118' && item.category === 'IP').length;
+const cadt135IP = data.filter(item => item.cadt === 'CADT 135' && item.category === 'IP').length;
+const cadt252IP = data.filter(item => item.cadt === 'CADT 252' && item.category === 'IP').length;
+
+const cadt118NonIP = data.filter(item => item.cadt === 'CADT 118' && item.category === 'NON-IP').length;
+const cadt135NonIP = data.filter(item => item.cadt === 'CADT 135' && item.category === 'NON-IP').length;
+const cadt252NonIP = data.filter(item => item.cadt === 'CADT 252' && item.category === 'NON-IP').length;
+setCadtCounts({
+  cadt118IP,
+  cadt135IP,
+  cadt252IP,
+  cadt118NonIP,
+  cadt135NonIP,
+  cadt252NonIP
+});
+
 
         const cadtChildren118 = data.filter(item => item.cadt === 'CADT 118' && parseInt(item.age) <= 14).length;
         const cadtYouth118 = data.filter(item => {
