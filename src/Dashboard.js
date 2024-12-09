@@ -1,224 +1,347 @@
-import React from 'react';
+import React from "react";
 import NavBar from "./Navbar.js";
-import { Container, Row, Col, Carousel, Card, Image } from 'react-bootstrap';
+import { Container, Row, Col, Carousel, Card, Image } from "react-bootstrap";
 import { RiTeamFill } from "react-icons/ri";
 import "./App.css";
+import Footer from "./Footer.js";
 
 function Dashboard() {
-    return (
-        <>
-            <Container fluid>
-                <NavBar />
-                <Carousel className="my-carousel mt-3" interval={2000}>
-                    <Carousel.Item>
-                        <img className="d-block w-100" src="slider1.jpg" alt="" />
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img className="d-block w-100" src="slider3.jpg" alt="" />
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img className="d-block w-100" src="slider4.jpg" alt="" />
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img className="d-block w-100" src="slider2.jpg" alt="" />
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img className="d-block w-100" src="TRIBE.png" alt="" />
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img className="d-block w-100" src="NCIP_TEAM.png" alt="" />
-                    </Carousel.Item>
-                </Carousel>
-                <Row className="mt-4 mb-5">
-                    <Col md={4} xs={12}>
-                        <Card className='shadow'>
-                            <Card.Body>
-                                <Card className='shadow background'>
-                                    <Card.Body className='p-5'>
-                                        <h2 className='d-flex justify-content-center font'>MANDATE</h2>
-                                        <p className='text'>
-                                            The NCIP shall protect and promote the interest and well-being of 
-                                            the ICCs/IPs with due regard to their beliefs, customs, traditions and institutions.
-                                        </p>
-                                    </Card.Body>
-                                </Card>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col md={4} xs={12}>
-                        <Card className='shadow'>
-                            <Card.Body>
-                                <Card className='shadow background'>
-                                    <Card.Body className='p-4'>
-                                        <h2 className='d-flex justify-content-center font'>MISSION</h2>
-                                        <p className='text'>
-                                            An enabling partner and lead advocate that formulates and implements policies, plans, 
-                                            and programs for the well-being of IPs with due regard to their ancestral domains and lands, 
-                                            self-governance and empowerment, social justice and human rights, and cultural integrity.
-                                        </p>
-                                    </Card.Body>
-                                </Card>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                    <Col md={4} xs={12}>
-                        <Card className='shadow'>
-                            <Card.Body>
-                                <Card className='shadow background'>
-                                    <Card.Body className='pb-5 pt-5'>
-                                        <h2 className='d-flex justify-content-center font'>VISION</h2>
-                                        <p className='text'>
-                                            An esteemed Commission committed to the delivery of quality services to ICCs/IPs 
-                                            with their rights fully respected, recognized, promoted, and protected.
-                                        </p>
-                                    </Card.Body>
-                                </Card>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                </Row>
+  return (
+    <>
+      <Container fluid>
+        <NavBar />
+        <Carousel className="my-carousel mt-3" interval={2000}>
+          <Carousel.Item>
+            <img className="d-block w-100" src="slider1.jpg" alt="" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="d-block w-100" src="slider3.jpg" alt="" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="d-block w-100" src="slider4.jpg" alt="" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="d-block w-100" src="slider2.jpg" alt="" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="d-block w-100" src="TRIBE.png" alt="" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="d-block w-100" src="NCIP_TEAM.png" alt="" />
+          </Carousel.Item>
+        </Carousel>
+        <Row className="mt-4 mb-5">
+          <Col md={4} xs={12}>
+            <Card className="shadow h-100">
+              <Card.Body className="d-flex flex-column background">
+                {" "}
+                <h2 className="d-flex justify-content-center font mb-3">
+                  MANDATE
+                </h2>
+                <p className="text mb-4">
+                  The NCIP shall protect and promote the interest and well-being
+                  of the ICCs/IPs with due regard to their beliefs, customs,
+                  traditions, and institutions.
+                </p>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col md={4} xs={12}>
+            <Card className="shadow h-100">
+              <Card.Body className="d-flex flex-column background">
+                {" "}
+                <h2 className="d-flex justify-content-center font mb-3">
+                  MISSION
+                </h2>
+                <p className="text">
+                  An enabling partner and lead advocate that formulates and
+                  implements policies, plans, and programs for the well-being of
+                  IPs with due regard to their ancestral domains and lands,
+                  self-governance and empowerment, social justice and human
+                  rights, and cultural integrity.
+                </p>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col md={4} xs={12}>
+            <Card className="shadow h-100">
+              <Card.Body className="d-flex flex-column background">
+                {" "}
+                <h2 className="d-flex justify-content-center font mb-3">
+                  VISION
+                </h2>
+                <p className="text">
+                  An esteemed Commission committed to the delivery of quality
+                  services to ICCs/IPs with their rights fully respected,
+                  recognized, promoted, and protected.
+                </p>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
 
-                <Container className="text mb-5">
-                    <div className="d-flex justify-content-center align-items-center mb-5">
-                        <RiTeamFill size={33} className="me-3" />
-                        <h2 className="fw-bold">NCIP OFFICIALS</h2>
-                    </div>
+        <Container className="text mb-5">
+          <div className="d-flex justify-content-center align-items-center mb-5">
+            <RiTeamFill size={33} className="me-3" />
+            <h2 className="fw-bold">NCIP OFFICIALS</h2>
+          </div>
 
-                    <div className="align-items-center">
-                        <Row className="d-flex flex-column flex-md-row align-items-center">
-                            <Col xs={12} md={3} className="text-center">
-                                <Image src="Edgielit.jpg" roundedCircle width="190" height="190" />
-                            </Col>
-                            <Col xs={12} md={9} className="d-flex flex-column text-center text-md-start">
-                                <h3>Edgielit Pajarillo</h3>
-                                <p>Community Development Officer III</p>
-                            </Col>
-                        </Row>
-                    </div>
+          <Row className="d-flex justify-content-center">
+            {/* Profile 1 */}
+            <Col xs={12} md={4} lg={3} className="mb-4">
+              <Card className="shadow-lg border-0 rounded-3">
+                <Card.Img
+                  variant="top"
+                  src="Edgielit.jpg"
+                  alt="Edgielit Pajarillo"
+                  roundedCircle
+                  className="mx-auto mt-3"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    objectFit: "cover",
+                  }}
+                />
+                <Card.Body className="text-center p-3">
+                  <Card.Title className="fw-bold mb-2">
+                    Edgielit Pajarillo
+                  </Card.Title>
+                  <Card.Text style={{ fontSize: "0.78rem" }}>
+                    Community Development Officer III
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
 
-                    <div className="align-items-center">
-                        <Row className="d-flex flex-column flex-md-row align-items-center">
-                            <Col xs={12} md={9} className="d-flex flex-column text-center text-md-end">
-                                <h3>Emie Rose Dela Vega</h3>
-                                <p>Midwife II</p>
-                            </Col>
-                            <Col xs={12} md={3} className="text-center">
-                                <Image src="Emie.jpg" roundedCircle width="190" height="190" />
-                            </Col>
-                        </Row>
-                    </div>
+            {/* Profile 2 */}
+            <Col xs={12} md={4} lg={3} className="mb-4">
+              <Card className="shadow-lg border-0 rounded-3">
+                <Card.Img
+                  variant="top"
+                  src="Emie.jpg"
+                  alt="Emie Rose Dela Vega"
+                  roundedCircle
+                  className="mx-auto mt-3"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    objectFit: "cover",
+                  }}
+                />
+                <Card.Body className="text-center p-3">
+                  <Card.Title className="fw-bold">
+                    Emie Rose Dela Vega
+                  </Card.Title>
+                  <Card.Text>Midwife II</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
 
-                    <div className="align-items-center">
-                        <Row className="d-flex flex-column flex-md-row align-items-center">
-                            <Col xs={12} md={3} className="text-center">
-                                <Image src="Bernard.jpg" roundedCircle width="190" height="190" />
-                            </Col>
-                            <Col xs={12} md={9} className="d-flex flex-column text-center text-md-start">
-                                <h3>Bernard Taray</h3>
-                                <p>Tribal Affairs Assistant I</p>
-                            </Col>
-                        </Row>
-                    </div>
+            {/* Profile 3 */}
+            <Col xs={12} md={4} lg={3} className="mb-4">
+              <Card className="shadow-lg border-0 rounded-3">
+                <Card.Img
+                  variant="top"
+                  src="Bernard.jpg"
+                  alt="Bernard Taray"
+                  roundedCircle
+                  className="mx-auto mt-3"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    objectFit: "cover",
+                  }}
+                />
+                <Card.Body className="text-center p-3">
+                  <Card.Title className="fw-bold">Bernard Taray</Card.Title>
+                  <Card.Text>Tribal Affairs Assistant I</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
 
-                    <div className="align-items-center">
-                        <Row className="d-flex flex-column flex-md-row align-items-center">
-                            <Col xs={12} md={9} className="d-flex flex-column text-center text-md-end">
-                                <h3>Charry Calamba-Cojo</h3>
-                                <p>Administrative Aide IV</p>
-                            </Col>
-                            <Col xs={12} md={3} className="text-center">
-                                <Image src="Charry.jpg" roundedCircle width="190" height="190" />
-                            </Col>
-                        </Row>
-                    </div>
+            {/* Profile 4 */}
+            <Col xs={12} md={4} lg={3} className="mb-4">
+              <Card className="shadow-lg border-0 rounded-3">
+                <Card.Img
+                  variant="top"
+                  src="Charry.jpg"
+                  alt="Charry Calamba-Cojo"
+                  roundedCircle
+                  className="mx-auto mt-3"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    objectFit: "cover",
+                  }}
+                />
+                <Card.Body className="text-center p-3">
+                  <Card.Title className="fw-bold">
+                    Charry Calamba-Cojo
+                  </Card.Title>
+                  <Card.Text>Administrative Aide IV</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
 
-                    <div className="align-items-center">
-                        <Row className="d-flex flex-column flex-md-row align-items-center">
-                            <Col xs={12} md={3} className="text-center">
-                                <Image src="Arquila.jpg" roundedCircle width="190" height="190" />
-                            </Col>
-                            <Col xs={12} md={9} className="d-flex flex-column text-center text-md-start">
-                                <h3>Arquila Gando</h3>
-                                <p>Administrative Aide I</p>
-                            </Col>
-                        </Row>
-                    </div>
+            {/* Profile 5 */}
+            <Col xs={12} md={4} lg={3} className="mb-4">
+              <Card className="shadow-lg border-0 rounded-3">
+                <Card.Img
+                  variant="top"
+                  src="Arquila.jpg"
+                  alt="Arquila Gando"
+                  roundedCircle
+                  className="mx-auto mt-3"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    objectFit: "cover",
+                  }}
+                />
+                <Card.Body className="text-center p-3">
+                  <Card.Title className="fw-bold">Arquila Gando</Card.Title>
+                  <Card.Text>Administrative Aide I</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
 
-                    <div className="align-items-center">
-                        <Row className="d-flex flex-column flex-md-row align-items-center">
-                            <Col xs={12} md={9} className="d-flex flex-column text-center text-md-end">
-                                <h3>Eleanor Galimpin</h3>
-                                <p>Dentist II</p>
-                            </Col>
-                            <Col xs={12} md={3} className="text-center">
-                                <Image src="Eleanor.jpg" roundedCircle width="190" height="190" />
-                            </Col>
-                        </Row>
-                    </div>
+            {/* Profile 6 */}
+            <Col xs={12} md={4} lg={3} className="mb-4">
+              <Card className="shadow-lg border-0 rounded-3">
+                <Card.Img
+                  variant="top"
+                  src="Eleanor.jpg"
+                  alt="Eleanor Galimpin"
+                  roundedCircle
+                  className="mx-auto mt-3"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    objectFit: "cover",
+                  }}
+                />
+                <Card.Body className="text-center p-3">
+                  <Card.Title className="fw-bold">Eleanor Galimpin</Card.Title>
+                  <Card.Text>Dentist II</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
 
-                    <div className="align-items-center">
-                        <Row className="d-flex flex-column flex-md-row align-items-center">
-                            <Col xs={12} md={3} className="text-center">
-                                <Image src="Concepcion.jpg" roundedCircle width="190" height="190" />
-                            </Col>
-                            <Col xs={12} md={9} className="d-flex flex-column text-center text-md-start">
-                                <h3>Concepcion Uson</h3>
-                                <p>Nurse II</p>
-                            </Col>
-                        </Row>
-                    </div>
+            {/* Profile 7 */}
+            <Col xs={12} md={4} lg={3} className="mb-4">
+              <Card className="shadow-lg border-0 rounded-3">
+                <Card.Img
+                  variant="top"
+                  src="Concepcion.jpg"
+                  alt="Concepcion Uson"
+                  roundedCircle
+                  className="mx-auto mt-3"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    objectFit: "cover",
+                  }}
+                />
+                <Card.Body className="text-center p-3">
+                  <Card.Title className="fw-bold">Concepcion Uson</Card.Title>
+                  <Card.Text>Nurse II</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
 
-                    <div className="align-items-center">
-                        <Row className="d-flex flex-column flex-md-row align-items-center">
-                            <Col xs={12} md={9} className="d-flex flex-column text-center text-md-end">
-                                <h3>Maria Gay Fuentes</h3>
-                                <p>Technical Staff</p>
-                            </Col>
-                            <Col xs={12} md={3} className="text-center">
-                                <Image src="Maria.jpg" roundedCircle width="190" height="190" />
-                            </Col>
-                        </Row>
-                    </div>
+            {/* Profile 8 */}
+            <Col xs={12} md={4} lg={3} className="mb-4">
+              <Card className="shadow-lg border-0 rounded-3">
+                <Card.Img
+                  variant="top"
+                  src="Maria.jpg"
+                  alt="Maria Gay Fuentes"
+                  roundedCircle
+                  className="mx-auto mt-3"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    objectFit: "cover",
+                  }}
+                />
+                <Card.Body className="text-center p-3">
+                  <Card.Title className="fw-bold">Maria Gay Fuentes</Card.Title>
+                  <Card.Text>Technical Staff</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
 
-                    <div className="align-items-center">
-                        <Row className="d-flex flex-column flex-md-row align-items-center">
-                            <Col xs={12} md={3} className="text-center">
-                                <Image src="Welmar.jpg" roundedCircle width="190" height="190" />
-                            </Col>
-                            <Col xs={12} md={9} className="d-flex flex-column text-center text-md-start">
-                                <h3>Welmar Sulhayan</h3>
-                                <p>Technical Staff</p>
-                            </Col>
-                        </Row>
-                    </div>
+            {/* Profile 9 */}
+            <Col xs={12} md={4} lg={3} className="mb-4">
+              <Card className="shadow-lg border-0 rounded-3">
+                <Card.Img
+                  variant="top"
+                  src="Welmar.jpg"
+                  alt="Welmar Sulhayan"
+                  roundedCircle
+                  className="mx-auto mt-3"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    objectFit: "cover",
+                  }}
+                />
+                <Card.Body className="text-center p-3">
+                  <Card.Title className="fw-bold">Welmar Sulhayan</Card.Title>
+                  <Card.Text>Technical Staff</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
 
-                    <div className="align-items-center">
-                        <Row className="d-flex flex-column flex-md-row align-items-center">
-                            <Col xs={12} md={9} className="d-flex flex-column text-center text-md-end">
-                                <h3>Starry Alcosero</h3>
-                                <p>Technical Staff</p>
-                            </Col>
-                            <Col xs={12} md={3} className="text-center">
-                                <Image src="Starry.jpg" roundedCircle width="190" height="190" />
-                            </Col>
-                        </Row>
-                    </div>
+            {/* Profile 10 */}
+            <Col xs={12} md={4} lg={3} className="mb-4">
+              <Card className="shadow-lg border-0 rounded-3">
+                <Card.Img
+                  variant="top"
+                  src="Starry.jpg"
+                  alt="Starry Alcosero"
+                  roundedCircle
+                  className="mx-auto mt-3"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    objectFit: "cover",
+                  }}
+                />
+                <Card.Body className="text-center p-3">
+                  <Card.Title className="fw-bold">Starry Alcosero</Card.Title>
+                  <Card.Text>Technical Staff</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
 
-                    <div className="align-items-center">
-                        <Row className="d-flex flex-column flex-md-row align-items-center">
-                            <Col xs={12} md={3} className="text-center">
-                                <Image src="Gayo.jpg" roundedCircle width="190" height="190" />
-                            </Col>
-                            <Col xs={12} md={9} className="d-flex flex-column text-center text-md-start">
-                                <h3>Gayo Kahuya</h3>
-                                <p>Technical Staff</p>
-                            </Col>
-                        </Row>
-                    </div>
-                </Container>
-            </Container>
-        </>
-    );
+            {/* Profile 11 */}
+            <Col xs={12} md={4} lg={3} className="mb-4">
+              <Card className="shadow-lg border-0 rounded-3">
+                <Card.Img
+                  variant="top"
+                  src="Gayo.jpg"
+                  alt="Gayo Kahuya"
+                  roundedCircle
+                  className="mx-auto mt-3"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    objectFit: "cover",
+                  }}
+                />
+                <Card.Body className="text-center p-3">
+                  <Card.Title className="fw-bold">Gayo Kahuya</Card.Title>
+                  <Card.Text>Technical Staff</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
+        <Footer />
+      </Container>
+    </>
+  );
 }
 
 export default Dashboard;

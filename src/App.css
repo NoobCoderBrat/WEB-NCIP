@@ -1,5 +1,5 @@
 .bg-image {
-  background-image: url('/public/mayapay3..jpg');
+  background-image: url("/public/mayapay3..jpg");
   background-size: cover;
   background-position: center;
 }
@@ -9,8 +9,8 @@
 }
 
 .logo {
-  width: 300px; 
-  height: auto; 
+  width: 300px;
+  height: auto;
 }
 
 .login-form {
@@ -18,7 +18,7 @@
   width: 100%;
 }
 
-.font{
+.font {
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
@@ -26,21 +26,21 @@
   letter-spacing: 1px;
 }
 
-.login-btn{
+.login-btn {
   height: 57px;
   background-color: #08439b !important;
   border-color: #08439b !important;
 }
 
-.login-btn:hover{
+.login-btn:hover {
   opacity: 0.75;
 }
 
-.login-btn:active{
-  opacity: 0.50;
+.login-btn:active {
+  opacity: 0.5;
 }
 
-.register{
+.register {
   color: blue;
   text-decoration: underline;
   cursor: pointer;
@@ -49,7 +49,7 @@
 
 .my-carousel {
   max-width: 100%;
-  margin: auto; 
+  margin: auto;
 }
 
 .my-carousel .carousel-item img {
@@ -57,12 +57,10 @@
   height: 520px;
 }
 
-.shadow{
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, 
-  rgba(0, 0, 0, 0.12) 0px -12px 30px, 
-  rgba(0, 0, 0, 0.12) 0px 4px 6px, 
-  rgba(0, 0, 0, 0.17) 0px 12px 13px, 
-  rgba(0, 0, 0, 0.09) 0px -3px 5px;
+.shadow {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .card-body {
@@ -73,31 +71,34 @@
   text-decoration: none;
 }
 
-.nav-link, .nav-dropdown {
+.nav-link,
+.nav-dropdown {
   display: flex;
   align-items: center;
 }
 
-.nav-link svg, .nav-dropdown svg {
-  vertical-align: middle; 
+.nav-link svg,
+.nav-dropdown svg {
+  vertical-align: middle;
 }
 
 .nav-link {
-  padding: 0.5rem 1rem; 
+  padding: 0.5rem 1rem;
 }
 
 .nav-dropdown .dropdown-toggle {
-  padding: 0.5rem 1rem; 
+  padding: 0.5rem 1rem;
 }
 
-.text{
+.text {
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   letter-spacing: 1px;
 }
 
-.table th, .table td {
+.table th,
+.table td {
   text-align: center;
 }
 
@@ -130,7 +131,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px; 
+  gap: 10px;
 }
 
 .action-button {
@@ -139,7 +140,7 @@
   justify-content: center;
 }
 
-.edit-btn{
+.edit-btn {
   background-color: #08439b !important;
   border-color: #08439b !important;
 }
@@ -158,25 +159,25 @@
 .floating-label {
   display: flex;
   align-items: center;
-  height: 3.125rem; 
+  height: 3.125rem;
 }
 
-.background{
+.background {
   background-color: rgb(8, 163, 184) !important;
   color: white !important;
 }
 
 @media (max-width: 600px) {
-    .search-group {
-        flex-direction: column; /* Stack label and input */
-        align-items: flex-start; /* Align items to the start */
-    }
+  .search-group {
+    flex-direction: column; /* Stack label and input */
+    align-items: flex-start; /* Align items to the start */
+  }
 
-    .search-group .form-label {
-        margin-bottom: 5px; /* Space between label and input */
-    }
+  .search-group .form-label {
+    margin-bottom: 5px; /* Space between label and input */
+  }
 
-    .search-group .form-control {
-        width: 100%; /* Make search bar full width */
-    }
+  .search-group .form-control {
+    width: 100%; /* Make search bar full width */
+  }
 }
